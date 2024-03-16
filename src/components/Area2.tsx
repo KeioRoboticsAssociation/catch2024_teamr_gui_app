@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import blueImg from "../assets/img/img-blue.svg";
 import redImg from "../assets/img/img-red.svg";
