@@ -1,6 +1,4 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./index.css";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -55,15 +53,15 @@ function Emergency() {
   );
 }
 
-function Auto(){
-  return(
+function Auto() {
+  return (
     <div>
       <ThemeProvider theme={darkTheme}>
         <AutoScreen />
         <AllScrollLock />
       </ThemeProvider>
     </div>
-  )
+  );
 }
 
 export default App;
