@@ -9,6 +9,8 @@ import AllScrollLock from "./components/AllScrollLock";
 import Home from "./pages/Home";
 import Stop from "./pages/Stop";
 import AutoScreen from "./pages/Auto";
+import ConnectionScreen from "./pages/Connection";
+import HomeTablet from "./pages/HomeTablet";
 
 const darkTheme = createTheme({
   palette: {
@@ -26,6 +28,8 @@ function App() {
         <Route path="/" element={<Screen />} />
         <Route path="/em" element={<Emergency />} />
         <Route path="/auto" element={<Auto />} />
+        <Route path="/connection" element={<Connection />} />
+        <Route path="/tablet" element={<Tablet />} />
       </Routes>
     </div>
   );
@@ -43,6 +47,19 @@ function Screen() {
   );
 }
 
+function Tablet(){
+  return (
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <HomeTablet />
+        <CssBaseline />
+        <AllScrollLock />
+      </ThemeProvider>
+    </div>
+  );
+
+}
+
 function Emergency() {
   return (
     <div>
@@ -58,6 +75,18 @@ function Auto() {
     <div>
       <ThemeProvider theme={darkTheme}>
         <AutoScreen />
+        <AllScrollLock />
+      </ThemeProvider>
+    </div>
+  );
+}
+
+function Connection() {
+  return (
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <ConnectionScreen />
+        <CssBaseline />
         <AllScrollLock />
       </ThemeProvider>
     </div>
