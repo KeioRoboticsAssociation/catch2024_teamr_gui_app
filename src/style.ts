@@ -6,6 +6,7 @@ const Root = styled("div")(({ theme }) => ({
   alignItems: "center",
   height: "100vh",
   background: "linear-gradient(to bottom, #211f20, #11283b)",
+  userSelect: 'none'
 }));
 
 export { Root };

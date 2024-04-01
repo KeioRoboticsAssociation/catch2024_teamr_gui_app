@@ -2,7 +2,7 @@ import ReactNipple from "react-nipple";
 import ROSLIB from "roslib";
 import { useState, useEffect, useRef } from "react";
 
-export default function Joystick({ ros, index }: any) {
+export default function Joystick({ ros }: any) {
   const [joyR, setJoyR] = useState([0, 0]);
   const [joyL, setJoyL] = useState([0, 0]);
   const [joytopic, setJoytopic] = useState(

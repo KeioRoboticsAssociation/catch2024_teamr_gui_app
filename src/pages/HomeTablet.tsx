@@ -10,6 +10,7 @@ import ColorSwitch from "../components/ColorSwitch";
 import RefleshButton from "../components/RefleshButton";
 import Area2 from "../components/Area2";
 import Joystick from "../components/Joystick";
+import PadButton from "../components/PadButton";
 
 const StyledHome = styled(Paper)(() => ({
   // padding: theme.spacing(8),
@@ -61,6 +62,7 @@ function HomeTablet() {
           <EmergencyStop topic={emgtopic} />
         </div>
         <Joystick ros={ros} />
+        <PadButton />
       </StyledHome>
     </Root>
   );
