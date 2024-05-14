@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 const StyledSilo = styled.div(() => ({
-    height: "300px",
-    width: "120px",
+    height: "200px",
+    width: "80px",
     display: "grid",
     border: "5px solid white",
     gridAutoFlow: "raw",
@@ -11,8 +11,8 @@ const StyledSilo = styled.div(() => ({
   }));
 
 const StyledBall = styled.div(() => ({
-    width: "100px",
-    height: "100px",
+    width: "60px",
+    height: "60px",
     borderRadius: "50%",
 }));
 

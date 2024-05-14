@@ -9,6 +9,7 @@ import State from "../components/State";
 import ColorSwitch from "../components/ColorSwitch";
 import RefleshButton from "../components/RefleshButton";
 import Area3 from "../components/area3/Area3";
+import Storage from "../components/area3/Storage";
 // import Area2 from "../components/Area2";
 
 const StyledHome = styled(Paper)(() => ({
@@ -50,6 +51,7 @@ function R2() {
         <State ros={ros} />
         <RefleshButton />
         <Area3 ros={ros}/>
+        <Storage ros={ros}/>
         {/* <Area2 color={!color} ros={ros} /> */}
         <EmergencyStop topic={emgtopic} />
       </StyledHome>
