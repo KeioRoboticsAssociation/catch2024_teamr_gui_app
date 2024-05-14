@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ROSLIB from "roslib";
 
 function State({ros}: any) {
-    const [state, setState] = useState("N/C");
+    const [state, setState] = useState("Harvest");
     useEffect(() => {
       const listener = new ROSLIB.Topic({
         ros: ros,
