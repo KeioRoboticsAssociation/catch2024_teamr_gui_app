@@ -1,0 +1,51 @@
+<mxfile host="Electron" modified="2024-05-14T05:03:16.904Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="ca4Rq_3HbQTCjOQQZZ2e" version="21.1.2" type="device" pages="2">
+  <diagram name="ページ1" id="0GeKAdYQLf-9g6kUB2zX">
+    <mxGraphModel dx="2749" dy="2269" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3VjmDg1gpyzOZM0NutKG-6" value="" style="group;rotation=-90;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="23" y="66.5" width="850" height="581" as="geometry" />
+        </mxCell>
+        <mxCell id="3VjmDg1gpyzOZM0NutKG-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=4;strokeColor=#FFFFFF;rotation=-90;" vertex="1" parent="3VjmDg1gpyzOZM0NutKG-6">
+          <mxGeometry y="1" width="850" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="3VjmDg1gpyzOZM0NutKG-3" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=-135;strokeColor=#FFFFFF;fillColor=none;strokeWidth=3;" vertex="1" parent="3VjmDg1gpyzOZM0NutKG-6">
+          <mxGeometry x="365" y="493" width="120" height="120.07849999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="3VjmDg1gpyzOZM0NutKG-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=4;strokeColor=#FFFFFF;rotation=-90;" vertex="1" parent="3VjmDg1gpyzOZM0NutKG-6">
+          <mxGeometry x="262" y="262" width="327" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="3VjmDg1gpyzOZM0NutKG-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=4;strokeColor=#FFFFFF;rotation=-90;" vertex="1" parent="3VjmDg1gpyzOZM0NutKG-6">
+          <mxGeometry x="356" y="29" width="140" height="580" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="TiPxRv3YBDjl0ezM96LH" name="ページ2">
+    <mxGraphModel dx="437" dy="297" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O33mqk_osB-HnKSZPfT--3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3B3B3;strokeColor=none;fillStyle=auto;glass=0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="200" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="O33mqk_osB-HnKSZPfT--1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3B3B3;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="O33mqk_osB-HnKSZPfT--4" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#FF0000;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80.19999999999999" y="160" as="sourcePoint" />
+            <mxPoint x="80" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O33mqk_osB-HnKSZPfT--7" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#00FF00;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80.19999999999999" y="160" as="sourcePoint" />
+            <mxPoint x="50" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
