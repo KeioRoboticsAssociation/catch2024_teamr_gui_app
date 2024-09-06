@@ -23,17 +23,17 @@ const StorageArea = styled.div(() => ({
 
 export default function Storage({ ros }) {
   const [gameState, setGameState] = useState("");
-  useEffect(() => {
-    const listener = new ROSLIB.Topic({
-      ros: ros,
-      name: "/game_state",
-      messageType: "silo_status/GameState",
-    });
-    listener.subscribe((message: any) => {
-      setGameState(message.data);
-      console.log(message.data.toString());
-    });
-  }, [ros]);
+  // useEffect(() => {
+  //   const listener = new ROSLIB.Topic({
+  //     ros: ros,
+  //     name: "/game_state",
+  //     messageType: "silo_status/GameState",
+  //   });
+  //   listener.subscribe((message: any) => {
+  //     setGameState(message.data);
+  //     console.log(message.data.toString());
+  //   });
+  // }, [ros]);
   return (
     <StorageArea>
       <Robot ros={ros} />

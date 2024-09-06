@@ -10,7 +10,7 @@ const DefaultButton = styled(Button)(() => ({
 }));
 
 const ros = new ROSLIB.Ros({
-  url: "ws://localhost:9090",
+  url: "ws://192.168.10.109:9090",
 });
 const emgtopic = new ROSLIB.Topic({
   ros: ros,

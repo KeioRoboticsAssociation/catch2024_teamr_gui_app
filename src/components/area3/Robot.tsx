@@ -15,7 +15,9 @@ const RobotArea = styled.div(() => ({
 }));
 
 export default function Robot({ ros }) {
-  const [pose, setPose] = useState("");
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  const [theta, setTheta] = useState(0);
   useEffect(() => {
     const listener = new ROSLIB.Topic({
       ros: ros,
@@ -23,13 +25,15 @@ export default function Robot({ ros }) {
       messageType: "geometry_msgs/Pose2D",
     });
     listener.subscribe((message: any) => {
-      setPose(message.data);
-      console.log(message.data.toString());
+      setX(message.x);
+      setY(message.y);
+      setTheta(message.theta);
     });
   }, [ros]);
   return (
-    <RobotArea style={{top:0, right:0, rotate:"deg"}}>
+    <RobotArea style={{top:(y)/(5.875) * 820-50, right:(x+0.35-8)/(12-8) * 600-50, rotate:String(360-(theta*180/3.14+90))+"deg"}}>
       <img src={robot} alt="robot" />
+      {x.toFixed(2)} {y.toFixed(2)} {theta.toFixed(2)}
     </RobotArea>
   );
 }

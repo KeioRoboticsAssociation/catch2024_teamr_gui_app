@@ -10,26 +10,34 @@ const BallArea = styled.div(() => ({
   gridAutoFlow: "column",
   placeItems: "center",
   alignContent: "end",
-  backgroundColor: "red",
+  // backgroundColor: "red",
   borderRadius: "50%",
 //   transition: "top 0.1s, right 0.1s, rotate 0.1s",
 }));
 
 export default function Ball({ ros }) {
-  const [pose, setPose] = useState("");
+  const [balls, setBalls] = useState([]);
   useEffect(() => {
     const listener = new ROSLIB.Topic({
       ros: ros,
-      name: "/pose",
-      messageType: "geometry_msgs/Pose2D",
+      name: "/ball_detection",
+      messageType: "ai_camera_interfaces/DetectionOnFieldArray",
     });
     listener.subscribe((message: any) => {
-      setPose(message.data);
-      console.log(message.data.toString());
+      // console.log(message.detections);
+      setBalls([...balls.slice(-10), message.detections[0]]);
+      console.log(balls)
     });
-  }, [ros]);
+  }, [ros, balls]);
+
   return (
-    <BallArea style={{ top: 700, right: 200, rotate: "deg" }}>
-    </BallArea>
+    balls.map((ball) => (
+      <BallArea style={{ 
+        top: (ball.position.y)/(5.875) * 820-25, 
+        right: (ball.position.x+0.35-8)/(12-8) * 600-25,
+        backgroundColor: ball.name === "purple_ball" ? "purple" : "red",  
+      }}>
+      </BallArea>
+    ))
   );
 }
