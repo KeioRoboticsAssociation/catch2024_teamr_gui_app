@@ -45,7 +45,7 @@ const DefaultButton = styled(Button)(() => ({
 }));
 
 const ros = new ROSLIB.Ros({
-  url: "ws://192.168.10.109:9090",
+  url: `ws://${window.location.hostname}:9090`,
 });
 
 
