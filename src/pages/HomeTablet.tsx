@@ -8,7 +8,6 @@ import Clock from "../components/Clock";
 import State from "../components/State";
 import ColorSwitch from "../components/ColorSwitch";
 import RefleshButton from "../components/RefleshButton";
-import Area2 from "../components/Area2";
 import Joystick from "../components/Joystick";
 import PadButton from "../components/PadButton";
 
@@ -29,7 +28,7 @@ const StyledHome = styled(Paper)(() => ({
 
 function HomeTablet() {
   const ros = new ROSLIB.Ros({
-    url: "ws://192.168.10.113:9090",
+    url: `ws://${window.location.hostname}:9090`,
   });
 
   const emgtopic = new ROSLIB.Topic({
@@ -58,7 +57,6 @@ function HomeTablet() {
           <ColorSwitch onChange={handleSwitchChange} />
           <State ros={ros} />
           <RefleshButton />
-          <Area2 color={!color} ros={ros} />
           <EmergencyStop topic={emgtopic} />
         </div>
         <Joystick ros={ros} />

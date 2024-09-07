@@ -8,7 +8,6 @@ import Clock from "../components/Clock";
 import State from "../components/State";
 import ColorSwitch from "../components/ColorSwitch";
 import RefleshButton from "../components/RefleshButton";
-import Area2 from "../components/Area2";
 
 const StyledHome = styled(Paper)(() => ({
   // padding: theme.spacing(8),
@@ -49,7 +48,6 @@ function Home() {
         <ColorSwitch onChange={handleSwitchChange} />
         <State ros={ros} />
         <RefleshButton />
-        <Area2 color={!color} ros={ros} />
         <EmergencyStop topic={emgtopic} />
       </StyledHome>
     </Root>

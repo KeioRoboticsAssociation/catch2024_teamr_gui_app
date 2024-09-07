@@ -11,7 +11,7 @@ import Stop from "./pages/Stop";
 import AutoScreen from "./pages/Auto";
 import ConnectionScreen from "./pages/Connection";
 import HomeTablet from "./pages/HomeTablet";
-import R2 from "./pages/R2";
+import Viewer from "./pages/Viewer";
 
 const darkTheme = createTheme({
   palette: {
@@ -27,7 +27,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Screen />} />
-        <Route path="/r2" element={<R2Screen />} />
+        <Route path="/viewer" element={<ViewerScreen />} />
         <Route path="/em" element={<Emergency />} />
         <Route path="/auto" element={<Auto />} />
         <Route path="/connection" element={<Connection />} />
@@ -50,11 +50,11 @@ function Screen() {
 }
 
 
-function R2Screen() {
+function ViewerScreen() {
   return (
     <div>
       <ThemeProvider theme={darkTheme}>
-        <R2 />
+        <Viewer />
         <CssBaseline />
         <AllScrollLock />
       </ThemeProvider>
