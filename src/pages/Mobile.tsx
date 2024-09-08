@@ -27,7 +27,7 @@ const StyledHome = styled(Paper)(() => ({
 
 function Mobile() {
   const ros = new ROSLIB.Ros({
-    
+
     url: `ws://${window.location.hostname}:9090`,
   });
 
@@ -45,12 +45,14 @@ function Mobile() {
   return (
     <Root>
       <StyledHome>
-        <Clock />
-        <ColorSwitch onChange={handleSwitchChange} />
-        <State ros={ros} />
+        <div style={{ top: 40, left: 50, position: "absolute" }}>
+          {/* <EmergencyStop topic={emgtopic} /> */}
+          <Clock />
+          <ColorSwitch onChange={handleSwitchChange} />
+          <State ros={ros} />
+        </div>
         <RefleshButton />
         <Selector color={!color} ros={ros} />
-        <EmergencyStop topic={emgtopic} />
       </StyledHome>
     </Root>
   );
