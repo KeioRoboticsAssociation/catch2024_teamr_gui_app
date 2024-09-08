@@ -8,9 +8,7 @@ import Clock from "../components/Clock";
 import State from "../components/State";
 import ColorSwitch from "../components/ColorSwitch";
 import RefleshButton from "../components/RefleshButton";
-import Robot from "../components/Robot";
-import Field from "../components/Field";
-import RobotZ from "../components/RobotZ";
+import Selector from "./Selector";
 
 const StyledHome = styled(Paper)(() => ({
   // padding: theme.spacing(8),
@@ -25,11 +23,11 @@ const StyledHome = styled(Paper)(() => ({
   height: "95vh",
   position: "absolute",
   borderRadius: "40px",
-  overflow: "hidden",
 }));
 
-function Viewer() {
+function Mobile() {
   const ros = new ROSLIB.Ros({
+    
     url: `ws://${window.location.hostname}:9090`,
   });
 
@@ -47,26 +45,14 @@ function Viewer() {
   return (
     <Root>
       <StyledHome>
-        <div style={{ top: 40, left: 50, position: "absolute" }}>
-          <Clock />
-          <ColorSwitch onChange={handleSwitchChange} />
-          {/* <EmergencyStop topic={emgtopic} /> */}
-        </div>
-
-        <div style={{ bottom: 50, left: 50, position: "absolute" }}>
-          <State ros={ros} />
-          <RefleshButton />
-        </div>
-        
-        {/* <Area3 ros={ros}/> */}
-
-        <Field color={color} />
-        <Robot ros={ros} />
-        <RobotZ ros={ros} />
-        {/* <Storage ros={ros}/> */}
-        {/* <Area2 color={!color} ros={ros} /> */}
+        <Clock />
+        <ColorSwitch onChange={handleSwitchChange} />
+        <State ros={ros} />
+        <RefleshButton />
+        <Selector color={!color} ros={ros} />
+        <EmergencyStop topic={emgtopic} />
       </StyledHome>
     </Root>
   );
 }
-export default Viewer;
+export default Mobile;

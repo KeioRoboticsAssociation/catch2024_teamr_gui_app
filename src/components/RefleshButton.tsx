@@ -6,7 +6,7 @@ function RefleshButton(){
         <IconButton
           aria-label="reflesh"
           size="small"
-          style={{ position: "absolute", top: "92.5%", left: "-2.7%" }}
+          style={{ position: "absolute", top: "92.5%", left: "-2.7%", zIndex: 99 }}
           onClick={() => {
             window.location.reload();
           }}

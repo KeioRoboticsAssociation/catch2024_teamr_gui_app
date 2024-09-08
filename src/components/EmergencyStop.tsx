@@ -8,10 +8,10 @@ function EmergencyStop({ topic }: any) {
       variant="contained"
       color="error"
       style={{
-        position: "absolute",
+        // position: "absolute",
         fontSize: "30px",
-        top: "38%",
-        left: "5%",
+        // top: "38%",
+        // left: "5%",
         width: "80px",
         height: "80px",
         borderRadius: "100%",

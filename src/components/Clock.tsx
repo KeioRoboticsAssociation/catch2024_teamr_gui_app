@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 
 const StyleClock = styled.div(() => ({
-    position: "absolute",
-    top: "10px",
-    left: "4%",
+    // position: "absolute",
+    // top: "10px",
+    // left: "4%",
     fontSize: "30pt",
     zIndex: 1,
   }));

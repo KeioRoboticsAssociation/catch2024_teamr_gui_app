@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import ROSLIB from "roslib";
 
 function State({ros}: any) {
-    const [state, setState] = useState("Harvest");
+    const [state, setState] = useState("N/C");
     useEffect(() => {
       const listener = new ROSLIB.Topic({
         ros: ros,
-        name: "/state",
-        messageType: "std_msgs/String",
+        name: "/mainarm_state",
+        messageType: "std_msgs/Int8",
       });
       listener.subscribe((message: any) => {
         setState(message.data);
@@ -16,10 +16,10 @@ function State({ros}: any) {
     }, [ros]);
     return (
       <div style={{
-        position: "absolute",
+        // position: "absolute",
         width: "auto",
-        top: "65%",
-        left: "3%",
+        // top: "65%",
+        // left: "3%",
       }}>
         <p
           style={{

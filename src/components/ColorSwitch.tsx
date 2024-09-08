@@ -4,10 +4,10 @@ import Switch from "@mui/material/Switch";
 const ToggleSwitch = styled(Switch)(() => ({
     padding: 8,
     transform: "scale(1.4)",
-    position: "absolute",
+    // position: "absolute",
     zIndex: 1,
-    top: "21%",
-    left: "6%",
+    // top: "21%",
+    // left: "6%",
     opacity: 1,
     "& .Mui-checked": {
       "& + .MuiSwitch-track": {

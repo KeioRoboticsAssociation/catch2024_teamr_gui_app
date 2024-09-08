@@ -12,6 +12,9 @@ import AutoScreen from "./pages/Auto";
 import ConnectionScreen from "./pages/Connection";
 import HomeTablet from "./pages/HomeTablet";
 import Viewer from "./pages/Viewer";
+import Selector from "./pages/Selector";
+import Mobile from "./pages/Mobile";
+import Seiton from "./pages/Seiton";
 
 const darkTheme = createTheme({
   palette: {
@@ -27,6 +30,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Screen />} />
+        <Route path="/selector" element={<SelectorScreen />} />
+        <Route path="/seiton" element={<SeitonScreen />} />
         <Route path="/viewer" element={<ViewerScreen />} />
         <Route path="/em" element={<Emergency />} />
         <Route path="/auto" element={<Auto />} />
@@ -55,6 +60,30 @@ function ViewerScreen() {
     <div>
       <ThemeProvider theme={darkTheme}>
         <Viewer />
+        <CssBaseline />
+        <AllScrollLock />
+      </ThemeProvider>
+    </div>
+  );
+}
+
+function SeitonScreen() {
+  return (
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <Seiton />
+        <CssBaseline />
+        <AllScrollLock />
+      </ThemeProvider>
+    </div>
+  );
+}
+
+function SelectorScreen() {
+  return (
+    <div>
+      <ThemeProvider theme={darkTheme}>
+        <Mobile />
         <CssBaseline />
         <AllScrollLock />
       </ThemeProvider>
