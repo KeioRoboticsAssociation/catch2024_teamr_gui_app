@@ -42,4 +42,7 @@ export default defineConfig({
     })
   ],
   base: '/hi_gui_app/',
+  server: {
+    port: 8080
+  }
 })

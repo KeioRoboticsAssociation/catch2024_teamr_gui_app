@@ -52,20 +52,19 @@ const Arrow = styled.div(() => ({
 
 const Controller = styled.div(() => ({
   position: 'absolute',
-  width: '700px',
+  width: '350px',
   height: '500px',
   border: '3px solid #fff',
 
-  // display: "grid",
-  // gridAutoFlow: "column",
-  // gridTemplateRows: "repeat(3, auto)",
-  // placeItems: "center",
+  display: "grid",
+  gridAutoFlow: "row",
+  gridTemplateColumns: "repeat(2, auto)",
+  placeItems: "center",
 
 }));
 
 function Seiton() {
   const ros = new ROSLIB.Ros({
-
     url: `ws://${window.location.hostname}:9090`,
   });
 
@@ -104,18 +103,25 @@ function Seiton() {
           <ArrowCircleRightIcon style={{ fontSize: 100 }} />
         </Arrow>
 
-        <Controller style={{ bottom: 80, left: 550 }}>
-          <ToggleButtonGroup size="large" aria-label="Large sizes" value={[false,false,true]}>
-            <ToggleButton value="left" key="left">
-              5mm
-            </ToggleButton>
-            <ToggleButton value="center" key="center">
-              10mm
-            </ToggleButton>,
-            <ToggleButton value="right" key="right">
-              50mm
-            </ToggleButton>,
-          </ToggleButtonGroup>
+        <Controller style={{ bottom: 80, left: 600 }}>
+          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+            5mm↑
+          </Button>
+          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+            5mm↓
+          </Button>
+          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+            10mm↑
+          </Button>
+          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+            10mm↓
+          </Button>
+          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+            50mm↑
+          </Button>
+          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+            50mm↓
+          </Button>
         </Controller>
 
         <RefleshButton />
