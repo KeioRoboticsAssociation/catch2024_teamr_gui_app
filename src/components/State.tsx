@@ -7,7 +7,7 @@ function State({ros}: any) {
     useEffect(() => {
       const listener = new ROSLIB.Topic({
         ros: ros,
-        name: "/mainarm_state",
+        name: "/mainarm/state",
         messageType: "std_msgs/Int8",
       });
       listener.subscribe((message: any) => {

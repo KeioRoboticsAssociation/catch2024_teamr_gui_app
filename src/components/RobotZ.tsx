@@ -35,7 +35,7 @@ export default function RobotZ({ ros }) {
   useEffect(() => {
     const listener = new ROSLIB.Topic({
       ros: ros,
-      name: "/mainarm_target_pose",
+      name: "/mainarm/target_pose",
       messageType: "catch2024_teamr_msgs/MainArm",
     });
     listener.subscribe((message: any) => {

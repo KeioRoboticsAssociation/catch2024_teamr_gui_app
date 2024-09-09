@@ -65,7 +65,7 @@ const Arrow = styled.div(() => ({
 const Controller = styled.div(() => ({
   position: 'absolute',
   width: '200px',
-  height: '600px',
+  height: '700px',
   // border: '3px solid #fff',
 
   // display: "grid",
@@ -89,7 +89,7 @@ const ros = new ROSLIB.Ros({
 });
 const topic = new ROSLIB.Topic({
   ros: ros,
-  name: "/joy_seiton",
+  name: "/seiton/joy",
   messageType: "sensor_msgs/Joy"
 });
 
@@ -119,7 +119,7 @@ function Seiton() {
   return (
     <Root>
       <StyledHome>
-        <div style={{ top: 40, right: 50, position: "absolute" }}>
+        <div style={{ top: 40, left: 50, position: "absolute" }}>
           {/* <EmergencyStop topic={emgtopic} /> */}
           <Clock />
           <ColorSwitch onChange={handleSwitchChange} />
@@ -170,13 +170,16 @@ function Seiton() {
           <ControllerButton variant="outlined" onTouchStart={setButton(8)} onTouchEnd={setButton(8, false)}>
             ﾊﾟﾀﾊﾟﾀ
           </ControllerButton>
-          <ControllerButton variant="outlined" onTouchStart={setButton(10)} onTouchEnd={setButton(10, false)}>
-            SERVO
+          <ControllerButton variant="outlined" onTouchStart={setButton(9)} onTouchEnd={setButton(10, false)}>
+            SERVO↑
           </ControllerButton>
-          <ControllerButton variant="outlined" onTouchStart={setButton(9)} onTouchEnd={setButton(9, false)}>
+          <ControllerButton variant="outlined" onTouchStart={setButton(10)} onTouchEnd={setButton(10, false)}>
+            SERVO↓
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(11)} onTouchEnd={setButton(9, false)}>
             ｺﾝﾍﾞｱ+
           </ControllerButton>
-          <ControllerButton variant="outlined" onTouchStart={setButton(10)} onTouchEnd={setButton(10, false)}>
+          <ControllerButton variant="outlined" onTouchStart={setButton(12)} onTouchEnd={setButton(10, false)}>
             ｺﾝﾍﾞｱ-
           </ControllerButton>
         </Controller>
