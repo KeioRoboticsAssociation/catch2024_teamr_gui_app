@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import "./fonts/Oxanium-Regular.ttf";
 import "./fonts/Oxanium-Bold.ttf";
 import "./fonts/NotoSansJP-Light.ttf";
+import "./fonts/KaiseiDecol-Bold.ttf";
 import AllScrollLock from "./components/AllScrollLock";
 import Home from "./pages/Home";
 import Stop from "./pages/Stop";
@@ -21,7 +22,7 @@ const darkTheme = createTheme({
     mode: "dark",
   },
   typography: {
-    fontFamily: ["Oxanium", "sans-serif"].join(","),
+    fontFamily: ["Oxanium","Kaisei Decol", "sans-serif"].join(","),
   },
 });
 

@@ -13,6 +13,18 @@ import { Icon, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
+enum ButtonID {
+  UP_50 = 0,
+  UP_10 = 1,
+  UP_5 = 2,
+  DOWN_5 = 3,
+  DOWN_10 = 4,
+  DOWN_50 = 5,
+  YURAYURA = 6,
+  GRIGRI = 7,
+  PATAPATA = 8,
+}
+
 const StyledHome = styled(Paper)(() => ({
   // padding: theme.spacing(8),
   color: "#FFFFFF",
@@ -52,30 +64,54 @@ const Arrow = styled.div(() => ({
 
 const Controller = styled.div(() => ({
   position: 'absolute',
-  width: '350px',
-  height: '500px',
-  border: '3px solid #fff',
+  width: '200px',
+  height: '600px',
+  // border: '3px solid #fff',
 
-  display: "grid",
-  gridAutoFlow: "row",
-  gridTemplateColumns: "repeat(2, auto)",
-  placeItems: "center",
+  // display: "grid",
+  // gridAutoFlow: "row",
+  // gridTemplateColumns: "repeat(2, auto)",
+  alignItems: "end"
 
 }));
 
-function Seiton() {
-  const ros = new ROSLIB.Ros({
-    url: `ws://${window.location.hostname}:9090`,
-  });
+const ControllerButton = styled(Button)(() => ({
+  height: 80,
+  width: 130,
+  fontSize: 30,
+  margin: 10,
+  textTransform: 'none',
+}));
 
-  const emgtopic = new ROSLIB.Topic({
-    ros: ros,
-    name: "/emergency",
-    messageType: "std_msgs/Bool",
-  });
+const NUMBER_OF_BUTTONS = 12;
+const ros = new ROSLIB.Ros({
+  url: `ws://${window.location.hostname}:9090`,
+});
+const topic = new ROSLIB.Topic({
+  ros: ros,
+  name: "/joy_seiton",
+  messageType: "sensor_msgs/Joy"
+});
+
+function Seiton() {
+
+  const [buttons, setButtons] = useState(Array(NUMBER_OF_BUTTONS).fill(false));
 
   const [color, setColor] = useState(true);
   const [boxIndex, setBoxIndex] = useState(Array(6).fill(false));
+
+  function setButton(index: number, value: boolean = true) {
+    return () => {
+      let newButtons = Array(NUMBER_OF_BUTTONS).fill(false);
+      newButtons[index] = value;
+      setButtons(newButtons);
+      const msg = new ROSLIB.Message({
+        axes: [0, 0, 0, 0, 0, 0],
+        buttons: newButtons
+      });
+      topic.publish(msg);
+    }
+  }
 
   const handleSwitchChange = () => {
     setColor(!color);
@@ -103,25 +139,46 @@ function Seiton() {
           <ArrowCircleRightIcon style={{ fontSize: 100 }} />
         </Arrow>
 
-        <Controller style={{ bottom: 80, left: 600 }}>
-          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
-            5mm↑
-          </Button>
-          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
-            5mm↓
-          </Button>
-          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
-            10mm↑
-          </Button>
-          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
-            10mm↓
-          </Button>
-          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+        <Controller style={{ bottom: 10, right: 10 }}>
+          <ControllerButton variant="outlined" onTouchStart={setButton(0)} onTouchEnd={setButton(0, false)}>
             50mm↑
-          </Button>
-          <Button style={{ height: 130, width: 130, fontSize: 30, margin: 10, textTransform: 'none' }} variant="outlined" >
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(1)} onTouchEnd={setButton(1, false)}>
+            10mm↑
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(2)} onTouchEnd={setButton(2, false)}>
+            5mm↑
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(3)} onTouchEnd={setButton(3, false)}>
+            5mm↓
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(4)} onTouchEnd={setButton(4, false)}>
+            10mm↓
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(5)} onTouchEnd={setButton(5, false)}>
             50mm↓
-          </Button>
+          </ControllerButton>
+        </Controller>
+
+        <Controller style={{ bottom: 10, right: 200 }}>
+          <ControllerButton variant="outlined" onTouchStart={setButton(6)} onTouchEnd={setButton(6, false)}>
+            ﾕﾗﾕﾗ
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(7)} onTouchEnd={setButton(7, false)}>
+            ｸﾞﾘｸﾞﾘ
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(8)} onTouchEnd={setButton(8, false)}>
+            ﾊﾟﾀﾊﾟﾀ
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(10)} onTouchEnd={setButton(10, false)}>
+            SERVO
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(9)} onTouchEnd={setButton(9, false)}>
+            ｺﾝﾍﾞｱ+
+          </ControllerButton>
+          <ControllerButton variant="outlined" onTouchStart={setButton(10)} onTouchEnd={setButton(10, false)}>
+            ｺﾝﾍﾞｱ-
+          </ControllerButton>
         </Controller>
 
         <RefleshButton />

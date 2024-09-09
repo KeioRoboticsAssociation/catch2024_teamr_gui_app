@@ -27,17 +27,18 @@ const StyledHome = styled(Paper)(() => ({
   borderRadius: "40px",
   overflow: "hidden",
 }));
+const ros = new ROSLIB.Ros({
+  url: `ws://${window.location.hostname}:9090`,
+});
+
+const emgtopic = new ROSLIB.Topic({
+  ros: ros,
+  name: "/emergency",
+  messageType: "std_msgs/Bool",
+});
+
 
 function Viewer() {
-  const ros = new ROSLIB.Ros({
-    url: `ws://${window.location.hostname}:9090`,
-  });
-
-  const emgtopic = new ROSLIB.Topic({
-    ros: ros,
-    name: "/emergency",
-    messageType: "std_msgs/Bool",
-  });
 
   const [color, setColor] = useState(true);
 

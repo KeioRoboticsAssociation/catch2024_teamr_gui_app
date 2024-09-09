@@ -10,6 +10,11 @@
 
 }
 
+@font-face{
+  font-family: 'Kaisei Decol';
+  src: url('./fonts/KaiseiDecol-Bold.ttf') format('truetype');
+}
+
 .App {
   text-align: center;
   font-family: Oxanium!important;
