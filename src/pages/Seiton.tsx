@@ -303,8 +303,8 @@ function Seiton() {
         <div style={{ bottom: 150, right: 180, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
-            onTouchStart={setButton(ButtonID.REVERSE)}
-            onTouchEnd={setButton(ButtonID.REVERSE, false)}
+            onClick={setButton(ButtonID.REVERSE)}
+            // onTouchEnd={setButton(ButtonID.REVERSE, false)}
             style={{ fontSize: 30 }}
             color='secondary'
           >
@@ -314,8 +314,8 @@ function Seiton() {
         <div style={{ bottom: 50, right: 180, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
-            onTouchStart={setButton(ButtonID.STOP)}
-            onTouchEnd={setButton(ButtonID.STOP, false)}
+            onClick={setButton(ButtonID.STOP)}
+            // onTouchEnd={setButton(ButtonID.STOP, false)}
             style={{ fontSize: 30 }}
             color='error'
           >
@@ -326,9 +326,8 @@ function Seiton() {
         <div style={{ bottom: 50, right: 50, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
-            onTouchStart={setButton(ButtonID.FORWARD)}
-            onTouchEnd={setButton(ButtonID.FORWARD, false)
-            }
+            onClick={setButton(ButtonID.FORWARD)}
+            // onTouchEnd={setButton(ButtonID.FORWARD, false)}
             style={{ fontSize: 30 }}
             color='success'
           >
