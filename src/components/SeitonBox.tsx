@@ -65,7 +65,7 @@ const Counter = ({ setoshio: { num, setNum }, color }: CounterProps) => (
       style={{ width: '90%', height: '90%', padding: 0, minWidth: 0 }}
       variant={'contained'}
       onClick={() => setNum(true)}
-      color="success"
+      color="primary"
     >
       <Add />
     </Button>
@@ -124,6 +124,7 @@ export default function SeitonBox(props: SeitonBoxProps) {
             bottom: 0,
             left: 0,
             width: '100%',
+            padding: '0 5px',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-around',

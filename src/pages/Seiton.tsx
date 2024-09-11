@@ -3,15 +3,12 @@ import styled from '@emotion/styled';
 import ROSLIB from 'roslib';
 import { Root } from '../style';
 import Paper from '@mui/material/Paper';
-import EmergencyStop from '../components/EmergencyStop';
 import Clock from '../components/Clock';
 import State from '../components/State';
 import ColorSwitch from '../components/ColorSwitch';
 import RefleshButton from '../components/RefleshButton';
 import Button from '@mui/material/Button';
-import { Icon, ToggleButton, ToggleButtonGroup } from '@mui/material';
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+
 import SeitonBox from '../components/SeitonBox';
 
 enum ButtonID {
@@ -150,7 +147,7 @@ function Seiton() {
     };
   }, []);
 
-  function setButton(index: number, value: boolean = true) {
+  function setButton(index: number, value = true) {
     return () => {
       const newButtons = Array(NUMBER_OF_BUTTONS).fill(false);
       newButtons[index] = value;
@@ -205,43 +202,43 @@ function Seiton() {
         <Controller style={{ bottom: 10, right: 10 }}>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(0)}
-            onTouchEnd={setButton(0, false)}
+            onTouchStart={setButton(ButtonID.UP_50)}
+            onTouchEnd={setButton(ButtonID.UP_50, false)}
           >
             50mm↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(1)}
-            onTouchEnd={setButton(1, false)}
+            onTouchStart={setButton(ButtonID.UP_10)}
+            onTouchEnd={setButton(ButtonID.UP_10, false)}
           >
             10mm↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(2)}
-            onTouchEnd={setButton(2, false)}
+            onTouchStart={setButton(ButtonID.UP_5)}
+            onTouchEnd={setButton(ButtonID.UP_5, false)}
           >
             5mm↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(3)}
-            onTouchEnd={setButton(3, false)}
+            onTouchStart={setButton(ButtonID.DOWN_5)}
+            onTouchEnd={setButton(ButtonID.DOWN_5, false)}
           >
             5mm↓
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(4)}
-            onTouchEnd={setButton(4, false)}
+            onTouchStart={setButton(ButtonID.DOWN_10)}
+            onTouchEnd={setButton(ButtonID.DOWN_10, false)}
           >
             10mm↓
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(5)}
-            onTouchEnd={setButton(5, false)}
+            onTouchStart={setButton(ButtonID.DOWN_50)}
+            onTouchEnd={setButton(ButtonID.DOWN_50, false)}
           >
             50mm↓
           </ControllerButton>
@@ -250,22 +247,22 @@ function Seiton() {
         <Controller style={{ bottom: 10, right: 150 }}>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(6)}
-            onTouchEnd={setButton(6, false)}
+            onTouchStart={setButton(ButtonID.YURAYURA)}
+            onTouchEnd={setButton(ButtonID.YURAYURA, false)}
           >
             ﾕﾗﾕﾗ
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(7)}
-            onTouchEnd={setButton(7, false)}
+            onTouchStart={setButton(ButtonID.GRIGRI)}
+            onTouchEnd={setButton(ButtonID.GRIGRI, false)}
           >
             ｸﾞﾘｸﾞﾘ
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(8)}
-            onTouchEnd={setButton(8, false)}
+            onTouchStart={setButton(ButtonID.PATAPATA)}
+            onTouchEnd={setButton(ButtonID.PATAPATA, false)}
           >
             ﾊﾟﾀﾊﾟﾀ
           </ControllerButton>
