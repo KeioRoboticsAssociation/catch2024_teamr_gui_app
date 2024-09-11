@@ -10,6 +10,7 @@ import RefleshButton from '../components/RefleshButton';
 import Button from '@mui/material/Button';
 
 import SeitonBox from '../components/SeitonBox';
+import { Style } from '@mui/icons-material';
 
 enum ButtonID {
   UP_50 = 0,
@@ -19,8 +20,13 @@ enum ButtonID {
   DOWN_10 = 4,
   DOWN_50 = 5,
   YURAYURA = 6,
-  GRIGRI = 7,
+  GURIGURI = 7,
   PATAPATA = 8,
+  SERVO_UP = 9,
+  SERVO_DOWN = 10,
+  FORWARD = 11,
+  REVERSE = 12,
+  DEFAULT = 13
 }
 
 const StyledHome = styled(Paper)(() => ({
@@ -78,7 +84,7 @@ const ControllerButton = styled(Button)(() => ({
   textTransform: 'none',
 }));
 
-const NUMBER_OF_BUTTONS = 12;
+const NUMBER_OF_BUTTONS = 18;
 const ros = new ROSLIB.Ros({
   url: `ws://${window.location.hostname}:9090`,
 });
@@ -131,7 +137,7 @@ function Seiton() {
   const [boxStatus, setBoxStatus] = useState<BoxStatusType[]>(
     Array(6).fill({ ebishio: 0, yuzushio: 0, norishio: 0 }),
   );
-  const [recommend, setRecommend] = useState<number[]>([0, 1, 2]);
+  const [recommend, setRecommend] = useState<number[]>([0, 0, 0]);
 
   useEffect(() => {
     boxStatusTopic.subscribe((message) => {
@@ -199,106 +205,128 @@ function Seiton() {
           <ArrowCircleRightIcon style={{ fontSize: 100 }} />
         </Arrow> */}
 
-        <Controller style={{ bottom: 10, right: 10 }}>
+        <Controller style={{ bottom: 100, right: 10 }}>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.UP_50)}
-            onTouchEnd={setButton(ButtonID.UP_50, false)}
+            onClick={setButton(ButtonID.YURAYURA)}
+            // onTouchEnd={setButton(ButtonID.YURAYURA, false)}
+          >
+            ﾕﾗﾕﾗ
+          </ControllerButton>
+
+          <ControllerButton
+            variant="outlined"
+            onClick={setButton(ButtonID.UP_50)}
+            // onMouseUp={setButton(ButtonID.UP_50, false)}
+            color='warning'
           >
             50mm↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.UP_10)}
-            onTouchEnd={setButton(ButtonID.UP_10, false)}
+            onClick={setButton(ButtonID.UP_10)}
+            // onMouseUp={setButton(ButtonID.UP_10, false)}
+            color='warning'
           >
             10mm↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.UP_5)}
-            onTouchEnd={setButton(ButtonID.UP_5, false)}
+            onClick={setButton(ButtonID.UP_5)}
+            // onMouseUp={setButton(ButtonID.UP_5, false)}
+            color='warning'
           >
             5mm↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.DOWN_5)}
-            onTouchEnd={setButton(ButtonID.DOWN_5, false)}
+            onClick={setButton(ButtonID.DOWN_5)}
+            // onMouseUp={setButton(ButtonID.DOWN_5, false)}
+            color='warning'
           >
             5mm↓
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.DOWN_10)}
-            onTouchEnd={setButton(ButtonID.DOWN_10, false)}
+            onClick={setButton(ButtonID.DOWN_10)}
+            // onMouseUp={setButton(ButtonID.DOWN_10, false)}
+            color='warning'
           >
             10mm↓
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.DOWN_50)}
-            onTouchEnd={setButton(ButtonID.DOWN_50, false)}
+            onClick={setButton(ButtonID.DOWN_50)}
+            // onMouseUp={setButton(ButtonID.DOWN_50, false)}
+            color='warning'
           >
             50mm↓
           </ControllerButton>
         </Controller>
 
-        <Controller style={{ bottom: 10, right: 150 }}>
+
+        <Controller style={{ bottom: 100, right: 150 }}>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(ButtonID.YURAYURA)}
-            onTouchEnd={setButton(ButtonID.YURAYURA, false)}
-          >
-            ﾕﾗﾕﾗ
-          </ControllerButton>
-          <ControllerButton
-            variant="outlined"
-            onTouchStart={setButton(ButtonID.GRIGRI)}
-            onTouchEnd={setButton(ButtonID.GRIGRI, false)}
-          >
-            ｸﾞﾘｸﾞﾘ
-          </ControllerButton>
-          <ControllerButton
-            variant="outlined"
-            onTouchStart={setButton(ButtonID.PATAPATA)}
-            onTouchEnd={setButton(ButtonID.PATAPATA, false)}
+            onClick={setButton(ButtonID.PATAPATA)}
+            // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
           >
             ﾊﾟﾀﾊﾟﾀ
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(9)}
-            onTouchEnd={setButton(10, false)}
+            onClick={setButton(ButtonID.DEFAULT)}
+            color="error"
+            // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
+          >
+            STOP
+          </ControllerButton>
+        </Controller>
+        <Controller style={{ bottom: 350, right: 150, height: 'auto' }}>
+          <ControllerButton
+            variant="outlined"
+            onClick={setButton(ButtonID.SERVO_UP)}
+            // onTouchEnd={setButton(ButtonID.SERVO_UP, false)}
           >
             SERVO↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onTouchStart={setButton(10)}
-            onTouchEnd={setButton(10, false)}
+            onClick={setButton(ButtonID.SERVO_DOWN)}
+            // onTouchEnd={setButton(ButtonID.SERVO_DOWN, false)}
           >
             SERVO↓
           </ControllerButton>
-          <ControllerButton
-            variant="outlined"
-            onTouchStart={setButton(11)}
-            onTouchEnd={setButton(9, false)}
-          >
-            ｺﾝﾍﾞｱ+
-          </ControllerButton>
-          <ControllerButton
-            variant="outlined"
-            onTouchStart={setButton(12)}
-            onTouchEnd={setButton(10, false)}
-          >
-            ｺﾝﾍﾞｱ-
-          </ControllerButton>
         </Controller>
+
+
+        <div style={{ bottom: 50, right: 50, position: 'absolute' }}>
+          <ControllerButton
+            variant="contained"
+            onTouchStart={setButton(ButtonID.REVERSE)}
+            onTouchEnd={setButton(ButtonID.REVERSE, false)}
+            style={{ fontSize: 30 }}
+            color='error'
+          >
+            逆転
+          </ControllerButton>
+          <ControllerButton
+            variant="contained"
+            onTouchStart={setButton(ButtonID.FORWARD)}
+            onTouchEnd={setButton(ButtonID.FORWARD, false)
+            }
+            style={{ fontSize: 30 }}
+            color='success'
+          >
+            正転
+          </ControllerButton>
+        </div>
+
+
 
         <RefleshButton />
       </StyledHome>
-    </Root>
+    </Root >
   );
 }
 export default Seiton;

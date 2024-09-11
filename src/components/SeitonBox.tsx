@@ -42,21 +42,23 @@ const Counter = ({ setoshio: { num, setNum }, color }: CounterProps) => (
     }}
   >
     <Button
-      style={{ width: '90%', height: '90%', padding: 0, minWidth: 0 }}
+      style={{ width: '90%', height: '90%', padding: 0, minWidth: 0, backgroundColor: '#ff8585' }}
       variant={'contained'}
       onClick={() => setNum(false)}
-      color="error"
     >
       <Remove />
     </Button>
+    
     <div
       style={{
         margin: 'auto',
         textAlign: 'center',
         verticalAlign: 'middle',
-        padding: 0,
+        padding: '0',
         fontSize: 30,
         color,
+        // backgroundColor: color,
+        // color: 'black'
       }}
     >
       {num}
@@ -69,14 +71,16 @@ const Counter = ({ setoshio: { num, setNum }, color }: CounterProps) => (
     >
       <Add />
     </Button>
+    
+    
   </div>
 );
 
 const RecommendIcon = (props: { color: string; display: boolean }) => (
   <div
     style={{
-      width: '20px',
-      height: '20px',
+      width: '30px',
+      height: '30px',
       borderRadius: '20%',
       backgroundColor: props.color,
       opacity: props.display ? 1 : 0,
@@ -113,6 +117,8 @@ export default function SeitonBox(props: SeitonBoxProps) {
             width: '100%',
             height: '100%',
             fontSize: 50,
+            color: 'white',
+            border: '2px solid'
           }}
           variant={'outlined'}
         >
@@ -130,8 +136,8 @@ export default function SeitonBox(props: SeitonBoxProps) {
             justifyContent: 'space-around',
           }}
         >
-          <RecommendIcon color={'green'} display={isRecommend[2]} />
-          <RecommendIcon color={'red'} display={isRecommend[0]} />
+          <RecommendIcon color={'#31f59d'} display={isRecommend[2]} />
+          <RecommendIcon color={'#ff4242'} display={isRecommend[0]} />
           <RecommendIcon color={'yellow'} display={isRecommend[1]} />
         </div>
       </div>
@@ -150,14 +156,16 @@ export default function SeitonBox(props: SeitonBoxProps) {
             num: setoshios.norishio,
             setNum: (isPlus: boolean) => sendCount(id, 'norishio', isPlus),
           }}
-          color={'green'}
+          color={'#31f59d'}
+          // color={'#b1ff99'}
         />
         <Counter
           setoshio={{
             num: setoshios.ebishio,
             setNum: (isPlus: boolean) => sendCount(id, 'ebishio', isPlus),
           }}
-          color={'red'}
+          color={'#ff4242'}
+          // color={'#ff99aa'}
         />
         <Counter
           setoshio={{
@@ -165,6 +173,7 @@ export default function SeitonBox(props: SeitonBoxProps) {
             setNum: (isPlus: boolean) => sendCount(id, 'yuzushio', isPlus),
           }}
           color={'yellow'}
+          // color={'#faff99'}
         />
       </div>
     </div>

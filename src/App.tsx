@@ -22,7 +22,8 @@ const darkTheme = createTheme({
     mode: "dark",
   },
   typography: {
-    fontFamily: ["Oxanium","Kaisei Decol", "sans-serif"].join(","),
+    // fontFamily: ["Oxanium","Kaisei Decol", "sans-serif"].join(","),
+    fontFamily: ["Oxanium","Noto Sans JP", "sans-serif"].join(","),
   },
 });
 
