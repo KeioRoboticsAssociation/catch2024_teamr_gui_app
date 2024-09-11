@@ -42,13 +42,18 @@ const Counter = ({ setoshio: { num, setNum }, color }: CounterProps) => (
     }}
   >
     <Button
-      style={{ width: '90%', height: '90%', padding: 0, minWidth: 0, backgroundColor: '#ff8585' }}
+      style={{
+        width: '90%',
+        height: '90%',
+        padding: 0,
+        minWidth: 0,
+        backgroundColor: '#ff8585',
+      }}
       variant={'contained'}
-      onClick={() => setNum(false)}
+      onClick={() => setNum(true)}
     >
       <Remove />
     </Button>
-    
     <div
       style={{
         margin: 'auto',
@@ -61,18 +66,21 @@ const Counter = ({ setoshio: { num, setNum }, color }: CounterProps) => (
         // color: 'black'
       }}
     >
-      {num}
+      {3 - num}
     </div>
     <Button
-      style={{ width: '90%', height: '90%', padding: 0, minWidth: 0 }}
+      style={{
+        width: '90%',
+        height: '90%',
+        padding: 0,
+        minWidth: 0,
+      }}
       variant={'contained'}
-      onClick={() => setNum(true)}
+      onClick={() => setNum(false)}
       color="primary"
     >
       <Add />
     </Button>
-    
-    
   </div>
 );
 
@@ -118,7 +126,7 @@ export default function SeitonBox(props: SeitonBoxProps) {
             height: '100%',
             fontSize: 50,
             color: 'white',
-            border: '2px solid'
+            border: '2px solid',
           }}
           variant={'outlined'}
         >

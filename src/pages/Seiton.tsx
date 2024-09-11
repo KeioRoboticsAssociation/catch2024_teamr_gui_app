@@ -13,9 +13,9 @@ import SeitonBox from '../components/SeitonBox';
 import { Style } from '@mui/icons-material';
 
 enum ButtonID {
-  UP_5 = 0,
+  UP_50 = 0,
   UP_10 = 1,
-  UP_50 = 2,
+  UP_5 = 2,
   DOWN_50 = 3,
   DOWN_10 = 4,
   DOWN_5 = 5,
@@ -27,7 +27,7 @@ enum ButtonID {
   FORWARD = 11,
   REVERSE = 12,
   DEFAULT = 13,
-  STOP = 14
+  STOP = 14,
 }
 
 const StyledHome = styled(Paper)(() => ({
@@ -210,7 +210,7 @@ function Seiton() {
           <ControllerButton
             variant="outlined"
             onClick={setButton(ButtonID.YURAYURA)}
-          // onTouchEnd={setButton(ButtonID.YURAYURA, false)}
+            // onTouchEnd={setButton(ButtonID.YURAYURA, false)}
           >
             ﾕﾗﾕﾗ
           </ControllerButton>
@@ -219,7 +219,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.UP_50)}
             // onMouseUp={setButton(ButtonID.UP_50, false)}
-            color='warning'
+            color="warning"
           >
             50mm↑
           </ControllerButton>
@@ -227,7 +227,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.UP_10)}
             // onMouseUp={setButton(ButtonID.UP_10, false)}
-            color='warning'
+            color="warning"
           >
             10mm↑
           </ControllerButton>
@@ -235,7 +235,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.UP_5)}
             // onMouseUp={setButton(ButtonID.UP_5, false)}
-            color='warning'
+            color="warning"
           >
             5mm↑
           </ControllerButton>
@@ -243,7 +243,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.DOWN_5)}
             // onMouseUp={setButton(ButtonID.DOWN_5, false)}
-            color='warning'
+            color="warning"
           >
             5mm↓
           </ControllerButton>
@@ -251,7 +251,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.DOWN_10)}
             // onMouseUp={setButton(ButtonID.DOWN_10, false)}
-            color='warning'
+            color="warning"
           >
             10mm↓
           </ControllerButton>
@@ -259,18 +259,17 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.DOWN_50)}
             // onMouseUp={setButton(ButtonID.DOWN_50, false)}
-            color='warning'
+            color="warning"
           >
             50mm↓
           </ControllerButton>
         </Controller>
 
-
         <Controller style={{ bottom: 100, right: 150 }}>
           <ControllerButton
             variant="outlined"
             onClick={setButton(ButtonID.PATAPATA)}
-          // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
+            // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
           >
             ﾊﾟﾀﾊﾟﾀ
           </ControllerButton>
@@ -278,7 +277,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.DEFAULT)}
             color="error"
-          // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
+            // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
           >
             STOP
           </ControllerButton>
@@ -286,15 +285,15 @@ function Seiton() {
         <Controller style={{ bottom: 350, right: 150, height: 'auto' }}>
           <ControllerButton
             variant="outlined"
-            onClick={setButton(ButtonID.SERVO_UP)}
-          // onTouchEnd={setButton(ButtonID.SERVO_UP, false)}
+            onClick={setButton(ButtonID.SERVO_DOWN)}
+            // onTouchEnd={setButton(ButtonID.SERVO_UP, false)}
           >
             SERVO↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
-            onClick={setButton(ButtonID.SERVO_DOWN)}
-          // onTouchEnd={setButton(ButtonID.SERVO_DOWN, false)}
+            onClick={setButton(ButtonID.SERVO_UP)}
+            // onTouchEnd={setButton(ButtonID.SERVO_DOWN, false)}
           >
             SERVO↓
           </ControllerButton>
@@ -306,7 +305,7 @@ function Seiton() {
             onClick={setButton(ButtonID.STOP)}
             // onTouchEnd={setButton(ButtonID.STOP, false)}
             style={{ fontSize: 30 }}
-            color='error'
+            color="error"
           >
             STOP
           </ControllerButton>
@@ -318,7 +317,7 @@ function Seiton() {
             onTouchStart={setButton(ButtonID.REVERSE)}
             onTouchEnd={setButton(ButtonID.REVERSE, false)}
             style={{ fontSize: 30 }}
-            color='secondary'
+            color="secondary"
           >
             逆転
           </ControllerButton>
@@ -331,17 +330,15 @@ function Seiton() {
             onTouchStart={setButton(ButtonID.FORWARD)}
             onTouchEnd={setButton(ButtonID.FORWARD, false)}
             style={{ fontSize: 30 }}
-            color='success'
+            color="success"
           >
             正転
           </ControllerButton>
         </div>
 
-
-
         <RefleshButton />
       </StyledHome>
-    </Root >
+    </Root>
   );
 }
 export default Seiton;
