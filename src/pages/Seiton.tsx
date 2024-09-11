@@ -26,7 +26,8 @@ enum ButtonID {
   SERVO_DOWN = 10,
   FORWARD = 11,
   REVERSE = 12,
-  DEFAULT = 13
+  DEFAULT = 13,
+  STOP = 14
 }
 
 const StyledHome = styled(Paper)(() => ({
@@ -209,7 +210,7 @@ function Seiton() {
           <ControllerButton
             variant="outlined"
             onClick={setButton(ButtonID.YURAYURA)}
-            // onTouchEnd={setButton(ButtonID.YURAYURA, false)}
+          // onTouchEnd={setButton(ButtonID.YURAYURA, false)}
           >
             ﾕﾗﾕﾗ
           </ControllerButton>
@@ -269,7 +270,7 @@ function Seiton() {
           <ControllerButton
             variant="outlined"
             onClick={setButton(ButtonID.PATAPATA)}
-            // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
+          // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
           >
             ﾊﾟﾀﾊﾟﾀ
           </ControllerButton>
@@ -277,7 +278,7 @@ function Seiton() {
             variant="outlined"
             onClick={setButton(ButtonID.DEFAULT)}
             color="error"
-            // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
+          // onTouchEnd={setButton(ButtonID.PATAPATA, false)}
           >
             STOP
           </ControllerButton>
@@ -286,30 +287,43 @@ function Seiton() {
           <ControllerButton
             variant="outlined"
             onClick={setButton(ButtonID.SERVO_UP)}
-            // onTouchEnd={setButton(ButtonID.SERVO_UP, false)}
+          // onTouchEnd={setButton(ButtonID.SERVO_UP, false)}
           >
             SERVO↑
           </ControllerButton>
           <ControllerButton
             variant="outlined"
             onClick={setButton(ButtonID.SERVO_DOWN)}
-            // onTouchEnd={setButton(ButtonID.SERVO_DOWN, false)}
+          // onTouchEnd={setButton(ButtonID.SERVO_DOWN, false)}
           >
             SERVO↓
           </ControllerButton>
         </Controller>
 
-
-        <div style={{ bottom: 50, right: 50, position: 'absolute' }}>
+        <div style={{ bottom: 150, right: 180, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
             onTouchStart={setButton(ButtonID.REVERSE)}
             onTouchEnd={setButton(ButtonID.REVERSE, false)}
             style={{ fontSize: 30 }}
-            color='error'
+            color='secondary'
           >
             逆転
           </ControllerButton>
+        </div>
+        <div style={{ bottom: 50, right: 180, position: 'absolute' }}>
+          <ControllerButton
+            variant="contained"
+            onTouchStart={setButton(ButtonID.STOP)}
+            onTouchEnd={setButton(ButtonID.STOP, false)}
+            style={{ fontSize: 30 }}
+            color='error'
+          >
+            STOP
+          </ControllerButton>
+        </div>
+
+        <div style={{ bottom: 50, right: 50, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
             onTouchStart={setButton(ButtonID.FORWARD)}
