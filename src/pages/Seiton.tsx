@@ -13,12 +13,12 @@ import SeitonBox from '../components/SeitonBox';
 import { Style } from '@mui/icons-material';
 
 enum ButtonID {
-  UP_50 = 0,
+  UP_5 = 0,
   UP_10 = 1,
-  UP_5 = 2,
-  DOWN_5 = 3,
+  UP_50 = 2,
+  DOWN_50 = 3,
   DOWN_10 = 4,
-  DOWN_50 = 5,
+  DOWN_5 = 5,
   YURAYURA = 6,
   GURIGURI = 7,
   PATAPATA = 8,
@@ -303,17 +303,6 @@ function Seiton() {
         <div style={{ bottom: 150, right: 180, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
-            onClick={setButton(ButtonID.REVERSE)}
-            // onTouchEnd={setButton(ButtonID.REVERSE, false)}
-            style={{ fontSize: 30 }}
-            color='secondary'
-          >
-            逆転
-          </ControllerButton>
-        </div>
-        <div style={{ bottom: 50, right: 180, position: 'absolute' }}>
-          <ControllerButton
-            variant="contained"
             onClick={setButton(ButtonID.STOP)}
             // onTouchEnd={setButton(ButtonID.STOP, false)}
             style={{ fontSize: 30 }}
@@ -322,12 +311,25 @@ function Seiton() {
             STOP
           </ControllerButton>
         </div>
+        <div style={{ bottom: 50, right: 180, position: 'absolute' }}>
+          <ControllerButton
+            variant="contained"
+            // onClick={setButton(ButtonID.REVERSE)}
+            onTouchStart={setButton(ButtonID.REVERSE)}
+            onTouchEnd={setButton(ButtonID.REVERSE, false)}
+            style={{ fontSize: 30 }}
+            color='secondary'
+          >
+            逆転
+          </ControllerButton>
+        </div>
 
         <div style={{ bottom: 50, right: 50, position: 'absolute' }}>
           <ControllerButton
             variant="contained"
-            onClick={setButton(ButtonID.FORWARD)}
-            // onTouchEnd={setButton(ButtonID.FORWARD, false)}
+            // onClick={setButton(ButtonID.FORWARD)}
+            onTouchStart={setButton(ButtonID.FORWARD)}
+            onTouchEnd={setButton(ButtonID.FORWARD, false)}
             style={{ fontSize: 30 }}
             color='success'
           >
