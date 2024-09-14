@@ -138,7 +138,7 @@ function Seiton() {
   const [boxStatus, setBoxStatus] = useState<BoxStatusType[]>(
     Array(6).fill({ ebishio: 0, yuzushio: 0, norishio: 0 }),
   );
-  const [recommend, setRecommend] = useState<number[]>([0, 0, 0]);
+  const [recommend, setRecommend] = useState<number[]>([5,5,5]);
 
   useEffect(() => {
     boxStatusTopic.subscribe((message) => {
