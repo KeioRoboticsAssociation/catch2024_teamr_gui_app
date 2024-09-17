@@ -1,5 +1,5 @@
 # ilias_gui_app
-ilias2024 R1のGUIのReact実装．  
+キャチロボ2024 チームRのGUIのReact実装．  
 React + Vite + TSで作成しています．
 
 ## Demo
@@ -11,7 +11,8 @@ npm i
 ```
 
 ## Screenshot
-![image](https://github.com/KeioRoboticsAssociation/ilias_gui_app/assets/58695125/6464dee1-114e-4a51-82ac-a1fd2dc11959)
+![image](https://github.com/user-attachments/assets/90358242-9803-485d-9e67-732d2a8f92fb)
+
 
 ## Credit
 [効果音ラボ](https://soundeffect-lab.info/)
