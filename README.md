@@ -1,4 +1,4 @@
-# ilias_gui_app
+# catch2024_teamr_gui_app
 キャチロボ2024 チームRのGUIのReact実装．  
 React + Vite + TSで作成しています．
 
